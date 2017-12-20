@@ -1,0 +1,129 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+
+<h1 class="text-center">User Dashboard</h1>
+<br>
+
+<div class="row">
+  <div class="col-xs-4"> 
+  <br>
+  <br>
+  <br>
+  <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#info">User Information</a></li>
+        <li><a href="#" data-target="#writeBlog">Create Blog Post</a></li>
+        <li><a href="/blogmanagement">Blog Post Management</a></li>
+        <li><a href="#changePass">Change Password</a></li>
+        <li><a href="#updateInfo">Update Information</a></li>
+        <li><a href="#deleteUser">Delete Account</a></li>
+
+  </ul>
+  </div>
+  <div class="col-xs-8 tab-content">
+
+
+  	<div class="col-xs-offset-2 col-xs-6 tab-pane fade" id="changePass">
+    <h3 class="text-center">Change Password</h3>
+    <br>
+  	<form method="post" action="/changepass">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" placeholder="Email" name="email" value="<%=session.email%>">
+    </div>
+    <div class="form-group">
+      <label for="password">Old Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="oldPassword">
+    </div>
+    <div class="form-group">
+      <label for="password">New Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="newPassword">
+    </div>
+    
+    <button type="submit" class="btn btn-default" value="submit">Submit</button>
+  </form>
+    </div><!--change Pass-->
+
+    <div class="tab-pane fade in active" id="info">
+      <h3 class="text-center">Information</h3>
+      <br>
+      <br>
+        <p><b>Email :</b> <%= email %></p>
+        <hr>
+        <p><b>Name :</b> <%= name %></p>
+        <hr>
+        <p><b>Age :</b> <%= age %></p>
+        <hr>
+        <p><b>Address :</b> <%= address %></p>
+        <hr>
+        <p><b>Phone Number :</b> +84<%= phoneNumber%></p>
+
+     
+
+    </div>
+
+    <div class="tab-pane fade" id="updateInfo">
+      <h3 class="text-center">Update Information</h3>
+      <br>
+      <br>
+      <form method="post" action="/update">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" name="email" value="<%= email %>">
+  </div>
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" name="name" value="<%= name %>">
+  </div>
+  <div class="form-group">
+    <label for="Age">Age</label>
+    <input type="text" class="form-control" name="age" value="<%= age %>">
+  </div>
+  <div class="form-group">
+    <label for="Address">Address</label>
+    <input type="text" class="form-control" name="address" value="<%= address %>">
+  </div>
+  <div class="form-group">
+    <label for="Phone Number">Phone Number</label>
+    <input type="text" class="form-control" name="phoneNumber" value="<%= phoneNumber %>">
+  </div>
+  
+  <button type="submit" class="btn btn-default" value="submit">Submit</button>
+</form>
+    </div>
+
+    <div class="tab-pane fade" id="deleteUser">
+      <h3 class="text-center">Delete Account</h3>
+      <br>
+      <h4 class="text-danger"><strong>Are you sure to delete this account ? All of your information and your blog will remove forever !</strong></h4>
+      <br>
+      <a href="/logout"><button class="btn btn-danger" id="deletedAccount">Delete</button></a>
+      <a href="/"><button class="btn btn-default">Cancel</button></a>
+    </div>
+    
+    <div class="tab-pane fade" id="writeBlog">
+      <h3 class="text-center">Create Blog</h3>
+      
+      <br>
+      <form method="post" action="/createblog">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" placeholder="Title ..." name="title">
+        </div>
+        <div class="form-group">
+          <label for="title">Describe</label>
+          <input type="text" class="form-control" placeholder="Describe ..." name="describe">
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea name="content" class="form-control" placeholder="Write blog content ..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-default" value="submit">Submit</button>
+      </form>
+    </div>
+
+
+</div>
+
+</div>
+
+<% include ../partials/footer %>

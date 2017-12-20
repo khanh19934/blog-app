@@ -1,0 +1,29 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+<h1 class="text-center">Login</h1>
+
+<div class="row">
+<div class="col-xs-offset-4 col-xs-4">
+<% if(locals.message){ %>
+    <% if(message.error){ %>
+    <div class="alert alert-danger text-center" role="alert">
+        <strong>Error!</strong> <%=message.error%>
+    </div>
+    <% }%>
+
+<% } %>
+	<form method="post" action="/login">
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  
+  <button type="submit" class="btn btn-default" value="submit">Submit</button>
+</form>
+</div>
+</div>
+<% include ../partials/footer %>

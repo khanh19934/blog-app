@@ -1,0 +1,19 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+<h1 class="text-center">Edit Blog Post</h1>
+<form method="post" action="/editBlog/<%= blog._id %>">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" value="<%= blog.title %>"  name="title">
+        </div>
+        <div class="form-group">
+          <label for="title">Describe</label>
+          <input type="text" class="form-control" value="<%= blog.describe %>" name="describe">
+        </div>
+        <div class="form-group">
+          <label for="content">Content</label>
+          <textarea name="content" class="form-control" ><%= blog.content %></textarea>
+        </div>
+        <button type="submit" class="btn btn-default" >Submit</button>
+      </form>
+<% include ../partials/footer %>

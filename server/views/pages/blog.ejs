@@ -1,0 +1,21 @@
+<% include ../partials/head %>
+    <% include ../partials/header %>
+        <h1 class="text-center">Blogs</h1>
+
+        <br>
+        <% for(let i = 0;i<blog.length;i++){%>
+            <div class="jumbotron">
+                <h4 class="text-center"><%= blog[i].title %> - Written by <%= blog[i].author.name %></h4>
+                <hr>
+                <p>
+                    <%= blog[i].describe %>
+                </p>
+                <% if (session.user && session.userId == blog[i].author._id || session.isAdmin) { %>
+                <a href="/editBlog/<%= blog[i]._id %>"><button class="btn btn-primary">Edit</button></a>
+
+               <a href="/blog" id="deleteBlogPost" data-value="/deleteBlog/<%= blog[i]._id %>"> <button class="btn btn-danger">Delete</button></a>
+                <%}%>
+                <a href="/blogPost/<%= blog[i]._id %>"><button class="btn btn-default">Read more</button></a>
+            </div>
+            <%}%>
+                <% include ../partials/footer %>
