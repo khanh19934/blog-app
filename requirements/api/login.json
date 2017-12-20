@@ -1,0 +1,12 @@
+{
+    "url": "/login",
+    "params": {
+        "username": "String",
+        "password": "String",
+    },
+    "response": {
+        "cookie": {
+            "session_token": "String"
+        },
+    }
+}

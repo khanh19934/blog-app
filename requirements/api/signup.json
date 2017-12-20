@@ -1,0 +1,13 @@
+{
+    "url": "/signup",
+    "params": {
+        "username": "String",
+        "email": "Sring",
+        "password": "String",
+    },
+    "response": {
+        "cookie": {
+            "session_token": "String"
+        },
+    }
+}
