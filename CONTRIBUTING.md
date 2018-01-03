@@ -1,48 +1,45 @@
-# How to contribute to this app
-rainbow.js is opened to everyone and we're welcoming for any kind of contribution.
-We believe that our project can grow with your interests helping others' necessities.
+# Làm thế nào để đóng góp cho app này?
 
-## Style Guide
+*blog-app* mở cho tất cả mọi người, và chúng tôi hoan nghênh bất kỳ đóng góp nào. Chúng tôi tin rằng dự án này sẽ hoàn thiện hơn khi nhận được sự quan tâm của các bạn. 
 
+## Chỉ dẫn về cách viết code 
 
-### Linting and Code Convention
-To maintain the code style, we adopted [ESLint](http://eslint.org/) to maintain our code quality. 
-The [rules](https://github.com/naver/eslint-config-naver/tree/master/rules) are modified version based on [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). 
+### Linting và quy chuẩn viết code
 
-### Commit Log Guidelines
-rainbow.js use formatted commit logs for many different purposes (like creating CHANGELOG, ease history searching, etc.).
-To not break, you'll be forced to follow our commit log guidelines.
-Before your commit/push, make sure following our commit log guidelines.
+Để bảo trì code, chúng tôi sử dụng [ESLint](http://eslint.org/) để đảm bảo chất lượng các đoạn code. 
 
-The outline is as below:
+Các [quy định](https://github.com/naver/eslint-config-naver/tree/master/rules) được dựa trên [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). 
+
+### Hướng dẫn khi Commit Code
+*blog-app* quy định về cách viết commit log cho rất nhiều mục đích (ví dụ như việc tạo CHANGELOG, xóa lịch sử tìm kiếm, v.v.).
+Trước khi commit/push, cần đảm bảo tuân theo quy định về định dạng của commit log như sau:
+
+Khung sườn của commit log:
 ```bash
-<type>(<module>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
+<type>(<module>): <chủ đề>
+<Dòng trống>
+<Phần thân>
+<Dòng trống>
 <footer>
 ```
 
 - #### Types
-  - **feat**: A new feature
-  - **fix**: A bug fix
-  - **docs**: Documentation only changes
-  - **style**: Changes that do not affect the meaning of the code. Such as white-space, formatting, missing semi-colons, etc.
-  - **refactor**: A code change that neither fixes a bug nor adds a feature
-  - **test**: Adding missing tests. Changing tests.
-  - **skip**: For commits made by after the 1st commit. Usually for applying code review changes.
+  - **feat**: Tính năng mới
+  - **fix**: Sửa lỗi
+  - **docs**: Thay đổi tài liệu
+  - **style**: Những thay đổi về style không làm ảnh hưởng đến ý nghĩa của code, ví dụ như khoảng trắng, dấu chấm phẩy .v.v.
+  - **refactor**: Đoạn code không phải là thêm tính năng mới, cũng không phải là sửa lỗi. 
+  - **test**: Thay đổi, thêm, bớt test.
+  - **skip**: Đối với những commits được tạo sau lần commit đầu tiên. Thường dùng cho thay đổi khi code review.
 
-- #### Body
-A short descriptive message which commit consists.
-At the end preferably(or should) contain related github issue number referencing by `Ref #ISSUE-NO`.
-
-ex) When the commit is about issue number 20, then
+- #### Phần thân
+Một đoạn mô tả ngắn về nội dung của lần commit. Một tham chiếu đến issue nên được đặt ở phần thân này, ví dụ như: `Ref #ISSUE-NO`. Ví dụ: Khi commit được thực hiện liên quan đến issue số 20, thì điền 1 đoạn là:
 ```bash
 Ref #20
 ```
 
 
-Example commit of fixing a bug:
+Ví dụ commit log cho việc sửa lỗ:
 ```bash
 Fix(Axis): Correct tick rendering
 
@@ -51,28 +48,27 @@ Update condition of tick to avoide unnecessary tick rendering
 Ref #20
 ```
 
-Example commit applying code review (after the 1st commit)
+Ví dụ commit log cho code review (sau commit thứ 1):
 > **Note:** Commit log starting with `skip:` type will be ignored by commit hook constraint.
 ```bash
 skip: Applied the review
 ```
 
-## How to submit Pull Requests
-Steps to submit your pull request:
+## Làm sao để tạo Pull Requests?
 
-1. Fork `rainbow.js` on your repository
-2. Create new branch from your rainbow.js master branch (and be sure always to be up-to-date)
-3. Do your work
-4. Create test code for your work (when is possible)
-5. Run `npm run lint` for linting and code style check. (update until without any error or warnings)
-6. Run test code by `npm test` or `npm test:chrome` to run the test on chrome browser.
-   Make sure tests are all passed at least in latest version of Chrome(mobile/desktop).
-7. Write commit log following convention and push to your repository branch.
-8. Create a new PR from your branch to rainbow.js.
-9. Wait for reviews.
-   When your contribution is well enough to be accepted, then will be merged to our branch.
-10. All done!
+Cách để gửi pull request:
+
+1. Fork `blog-app` về repository của bạn
+2. Tạo một branch mới trong branch blog-app master của bạn (luôn phải đảm bảo là branch master của bạn là cập nhật nhất)
+3. Thay đổi code bạn mong muốn
+4. Viết test cho phần bạn thêm vào (nếu có thể)
+5. Chạy `npm run lint` để kiểm tra định dạng code. Nếu có cảnh báo hoặc báo lỗi thì sửa đến khi hết hoàn toàn.
+6. Chạy `npm test` hoặc `npm test:chrome` để  chạy test trên trình duyệt Chrome. Hãy đảm bảo mọi test phải passed trên trình duyệt Chrome (mobile/ hoặc desktop).
+7. Viết commit log theo quy định nói trên, sau đó push lên repository của bạn.
+8. Tạo một Pull Request từ branch của bạn đến blog-app.
+9. Đợi reviews. Khi mà đoạn code của bạn được chấp nhận, nó sẽ được merged vào branch của chúng tôi.
+10. Xong!
 
 
-## License
-By contributing to rainbow.js, you're agreeing that your contributions will be licensed under its [MIT](https://opensource.org/licenses/MIT) license.
+## Bản quyền
+Một khi đã đóng góp vào blog-app, bạn đồng ý rằng code của bạn sẽ có bản quyền theo nhóm [MIT](https://opensource.org/licenses/MIT).
